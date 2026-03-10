@@ -1,83 +1,85 @@
 /* ╔══════════════════════════════════════════════════════════════════╗
    ║  Oráculo Namek v2.0 — Dragon Ball Expert Chat Interface         ║
-   ║  Design: Glassmorphism + Notion-inspired + Dark mode support    ║
+   ║  Design: Dragon Ball Theme - Energía Ki & Super Saiyan Style    ║
    ╚══════════════════════════════════════════════════════════════════╝ */
 
-/* ── Theme tokens ──────────────────────────────────────────────────── */
+/* ── Theme tokens: Dragon Ball Style ───────────────────────────────── */
 :root,
 [data-theme="light"] {
-    --bg-0: #f5f5f4;
-    --bg-1: #ffffff;
-    --bg-2: #fafaf9;
-    --bg-3: #f0efed;
-    --bg-sidebar: rgba(255, 255, 255, 0.85);
-    --bg-chat: rgba(250, 250, 249, 0.7);
+    --bg-0: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%);
+    --bg-1: #fffbeb;
+    --bg-2: #fef3c7;
+    --bg-3: #fde68a;
+    --bg-sidebar: rgba(255, 251, 235, 0.95);
+    --bg-chat: rgba(254, 243, 199, 0.4);
     --bg-input: #ffffff;
-    --text-0: #1c1917;
-    --text-1: #57534e;
-    --text-2: #a8a29e;
-    --accent: #1d4ed8;
-    --accent-hover: #1e40af;
-    --accent-soft: rgba(29, 78, 216, 0.08);
-    --accent-glow: rgba(29, 78, 216, 0.15);
+    --text-0: #78350f;
+    --text-1: #92400e;
+    --text-2: #b45309;
+    --accent: #ea580c;
+    --accent-hover: #c2410c;
+    --accent-soft: rgba(234, 88, 12, 0.12);
+    --accent-glow: rgba(234, 88, 12, 0.3);
     --danger: #dc2626;
-    --danger-soft: rgba(220, 38, 38, 0.06);
+    --danger-soft: rgba(220, 38, 38, 0.08);
     --success: #16a34a;
-    --success-soft: rgba(22, 163, 74, 0.08);
-    --border: #e7e5e4;
-    --border-strong: #d6d3d1;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
+    --success-soft: rgba(22, 163, 74, 0.1);
+    --border: #fbbf24;
+    --border-strong: #f59e0b;
+    --shadow-sm: 0 2px 4px rgba(234, 88, 12, 0.1);
+    --shadow-md: 0 4px 16px rgba(234, 88, 12, 0.15);
+    --shadow-lg: 0 12px 40px rgba(234, 88, 12, 0.25);
     --radius: 12px;
     --radius-sm: 8px;
     --radius-lg: 16px;
-    --msg-user-bg: #1d4ed8;
+    --msg-user-bg: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
     --msg-user-text: #ffffff;
     --msg-assistant-bg: #ffffff;
-    --msg-assistant-border: #e7e5e4;
+    --msg-assistant-border: #fbbf24;
     --code-bg: #1e1e2e;
-    --code-text: #cdd6f4;
-    --kbd-bg: #e7e5e4;
-    --kbd-text: #57534e;
+    --code-text: #fbbf24;
+    --kbd-bg: #fde68a;
+    --kbd-text: #92400e;
     --scrollbar-track: transparent;
-    --scrollbar-thumb: #d6d3d1;
+    --scrollbar-thumb: #f59e0b;
+    --ki-aura: rgba(234, 88, 12, 0.4);
+    --saiyan-glow: rgba(251, 191, 36, 0.6);
 }
 
 [data-theme="dark"] {
-    --bg-0: #0c0a09;
-    --bg-1: #1c1917;
-    --bg-2: #292524;
-    --bg-3: #44403c;
-    --bg-sidebar: rgba(28, 25, 23, 0.9);
-    --bg-chat: rgba(12, 10, 9, 0.7);
-    --bg-input: #292524;
-    --text-0: #fafaf9;
-    --text-1: #a8a29e;
-    --text-2: #78716c;
-    --accent: #60a5fa;
-    --accent-hover: #93c5fd;
-    --accent-soft: rgba(96, 165, 250, 0.1);
-    --accent-glow: rgba(96, 165, 250, 0.2);
+    --bg-0: #0f172a;
+    --bg-1: #1e293b;
+    --bg-2: #334155;
+    --bg-3: #475569;
+    --bg-sidebar: rgba(30, 41, 59, 0.9);
+    --bg-chat: rgba(15, 23, 42, 0.5);
+    --bg-input: #334155;
+    --text-0: #fef3c7;
+    --text-1: #fde68a;
+    --text-2: #fcd34d;
+    --accent: #fb923c;
+    --accent-hover: #fdba74;
+    --accent-soft: rgba(251, 146, 60, 0.08);
+    --accent-glow: rgba(251, 146, 60, 0.12);
     --danger: #f87171;
-    --danger-soft: rgba(248, 113, 113, 0.1);
+    --danger-soft: rgba(248, 113, 113, 0.08);
     --success: #4ade80;
-    --success-soft: rgba(74, 222, 128, 0.1);
-    --border: #292524;
-    --border-strong: #44403c;
+    --success-soft: rgba(74, 222, 128, 0.08);
+    --border: #475569;
+    --border-strong: #64748b;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
-    --msg-user-bg: #2563eb;
-    --msg-user-text: #ffffff;
-    --msg-assistant-bg: #1c1917;
-    --msg-assistant-border: #292524;
-    --code-bg: #0c0a09;
-    --code-text: #cdd6f4;
-    --kbd-bg: #44403c;
-    --kbd-text: #a8a29e;
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --msg-user-bg: #fb923c;
+    --msg-user-text: #0f172a;
+    --msg-assistant-bg: #1e293b;
+    --msg-assistant-border: #475569;
+    --code-bg: #0f172a;
+    --code-text: #fbbf24;
+    --kbd-bg: #475569;
+    --kbd-text: #fde68a;
     --scrollbar-track: transparent;
-    --scrollbar-thumb: #44403c;
+    --scrollbar-thumb: #64748b;
 }
 
 /* ── Reset & base ──────────────────────────────────────────────────── */
@@ -119,7 +121,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-2);
+    background: var(--accent);
 }
 
 /* ── Layout shell ──────────────────────────────────────────────────── */
@@ -162,13 +164,6 @@ body {
 .auth-logo {
     font-size: 3rem;
     margin-bottom: 12px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-6px); }
 }
 
 .auth-hero h1 {
@@ -204,7 +199,7 @@ body {
     border-radius: 6px;
     background: var(--accent-soft);
     color: var(--accent);
-    border: 1px solid var(--accent-glow);
+    border: 1px solid var(--border-strong);
 }
 
 .auth-tabs {
@@ -334,7 +329,6 @@ button:disabled {
 
 .btn-primary:hover:not(:disabled) {
     background: var(--accent-hover);
-    box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .btn-lg {
@@ -529,7 +523,7 @@ button:disabled {
 
 .conversation-item.active {
     background: var(--accent-soft);
-    border-color: var(--accent-glow);
+    border-color: var(--border-strong);
 }
 
 .conversation-item h4 {
@@ -901,8 +895,14 @@ button:disabled {
 .typing-dot:nth-child(3) { animation-delay: 0.4s; }
 
 @keyframes typingBounce {
-    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-    30%            { transform: translateY(-6px); opacity: 1; }
+    0%, 60%, 100% { 
+        transform: translateY(0); 
+        opacity: 0.4;
+    }
+    30% { 
+        transform: translateY(-6px); 
+        opacity: 1;
+    }
 }
 
 /* ── Message form ──────────────────────────────────────────────────── */
@@ -965,7 +965,10 @@ kbd {
     flex-shrink: 0;
     padding: 0;
     box-shadow: 0 2px 8px var(--accent-glow);
-    transition: all 0.2s ease;
+}
+
+.btn-send:hover {
+    background: var(--accent-hover);
 }
 
 .btn-send:hover:not(:disabled) {
@@ -984,7 +987,7 @@ kbd {
 
 @keyframes pulse {
     0%, 100% { box-shadow: 0 2px 8px var(--accent-glow); }
-    50%      { box-shadow: 0 2px 20px var(--accent-glow); }
+    50%      { box-shadow: 0 2px 16px var(--accent-glow); }
 }
 
 /* ── Toast ─────────────────────────────────────────────────────────── */
