@@ -104,66 +104,8 @@ require_once __DIR__ . '/config.php';
 
         <!-- ═══════════════ CHAT VIEW ═══════════════ -->
         <section id="chatView" class="chat-layout hidden">
-            <aside class="sidebar panel">
-                <div class="sidebar-header">
-                    <div class="user-info">
-                        <div class="user-avatar" id="userAvatar">U</div>
-                        <div>
-                            <strong id="userBadge">Usuario</strong>
-                            <small id="userEmail">email@dominio.com</small>
-                        </div>
-                    </div>
-                    <div class="sidebar-actions">
-                        <button id="themeToggle" class="btn-icon" type="button" title="Cambiar tema" aria-label="Cambiar tema">
-                            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="5" />
-                                <line x1="12" y1="1" x2="12" y2="3" />
-                                <line x1="12" y1="21" x2="12" y2="23" />
-                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                                <line x1="1" y1="12" x2="3" y2="12" />
-                                <line x1="21" y1="12" x2="23" y2="12" />
-                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                            </svg>
-                            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                            </svg>
-                        </button>
-                        <button id="logoutBtn" class="btn-icon btn-icon-danger" type="button" title="Cerrar sesión" aria-label="Cerrar sesión">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                                <polyline points="16 17 21 12 16 7" />
-                                <line x1="21" y1="12" x2="9" y2="12" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="sidebar-search">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    </svg>
-                    <input type="text" id="searchConversations" placeholder="Buscar conversaciones…" autocomplete="off">
-                </div>
-
-                <button id="newConversationBtn" class="btn-primary btn-new-conv" type="button">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                    </svg>
-                    Nueva conversación
-                </button>
-
-                <div id="conversationList" class="conversation-list"></div>
-
-                <div class="sidebar-footer">
-                    <small class="stats-label" id="statsLabel">0 conversaciones</small>
-                </div>
-            </aside>
-
-            <section class="chat-main panel">
+            <div class="chat-layout-inner">
+                <section class="chat-main panel">
                 <header class="chat-header">
                     <div class="chat-header-info">
                         <h2 id="conversationTitle">Selecciona una conversación</h2>
@@ -233,6 +175,72 @@ require_once __DIR__ . '/config.php';
                     </button>
                 </form>
             </section>
+
+            <aside class="sidebar panel">
+                <div class="sidebar-title">
+                    <h2><?= htmlspecialchars(APP_NAME) ?></h2>
+                </div>
+                
+                <button id="newConversationBtn" class="btn-primary btn-new-conv" type="button">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                    Nueva conversación
+                </button>
+
+                <div id="conversationList" class="conversation-list"></div>
+                
+                <div class="sidebar-header">
+                    <div class="user-info">
+                        <div class="user-avatar" id="userAvatar">U</div>
+                        <div>
+                            <strong id="userBadge">Usuario</strong>
+                            <small id="userEmail">email@dominio.com</small>
+                        </div>
+                    </div>
+                    <div class="sidebar-actions">
+                        <button id="themeToggle" class="btn-icon" type="button" title="Cambiar tema" aria-label="Cambiar tema">
+                            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5" />
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </svg>
+                            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        </button>
+                        <button id="logoutBtn" class="btn-icon btn-icon-danger" type="button" title="Cerrar sesión" aria-label="Cerrar sesión">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                                <polyline points="16 17 21 12 16 7" />
+                                <line x1="21" y1="12" x2="9" y2="12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sidebar-search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                    <input type="text" id="searchConversations" placeholder="Buscar conversaciones…" autocomplete="off">
+                </div>
+
+                <div id="conversationList" class="conversation-list"></div>
+
+                <div class="sidebar-footer">
+                    <small class="stats-label" id="statsLabel">0 conversaciones</small>
+                </div>
+            </aside>
+            </div>
         </section>
     </main>
 
